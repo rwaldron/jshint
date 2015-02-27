@@ -5077,6 +5077,15 @@ exports["/*jshint ignore */ should allow the linter to skip blocked-out lines to
   test.done();
 };
 
+exports["/*jshint ignore */ gh-2215"] = function (test) {
+  var code = fs.readFileSync(__dirname + "/fixtures/gh-2215.js", "utf8");
+
+  TestRun(test)
+    .test(code, {maxlen: 640});
+
+  test.done();
+};
+
 exports["/*jshint ignore */ should ignore lines that appear to end with multiline comment endings (GH-1691)"] = function(test) {
   var code = [
     "/*jshint ignore: start*/",
